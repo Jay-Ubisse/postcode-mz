@@ -14,4 +14,5 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/admin/login', [AdminController::class, 'login']);
+Route::get('/admin/login', [AdminController::class, 'index']);
+Route::post('/admin/login', [AdminController::class, 'login']);
