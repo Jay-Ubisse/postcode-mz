@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,7 @@ use App\Http\Controllers\AdminController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/admin/login', [AdminController::class, 'index']);
-Route::post('/admin/login', [AdminController::class, 'login']);
+Route::controller(AuthController::class)->group(function() {
+    Route::get('/admin/login', 'index')->name('admin.index');
+    Route::post('/admin/login', 'login')->name('admin.login');
+});

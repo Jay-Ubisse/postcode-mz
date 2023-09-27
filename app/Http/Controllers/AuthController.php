@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 
-class AdminController extends Controller
+class AuthController extends Controller
 {
     public function index() {
         return view('admin.login');
     }
 
     public function login(Request $request) {
-        $name = $request->input('username');
+        $username = $request->input('username');
         $password = $request->input('password');
-        return $name . " " . $password;
+        $role = $request->input('role');
+        return view('admin.home',  compact('username', 'password', 'role'));
     }
 }
