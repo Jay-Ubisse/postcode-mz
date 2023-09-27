@@ -14,4 +14,4 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', [AdminController::class, 'login']);
+Route::get('/admin/login', [AdminController::class, 'login']);
