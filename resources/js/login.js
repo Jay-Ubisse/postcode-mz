@@ -5,13 +5,13 @@ $(document).ready(function () {
         e.preventDefault();
         $('.user-tab').removeClass('tab-active');
         $('.admin-tab').addClass('tab-active');
-        $('.role-field').val("Administrador");
+        $('.role-field').val("admin");
     });
 
     $('.user-tab').click(function (e) { 
         e.preventDefault();
         $('.admin-tab').removeClass('tab-active');
         $('.user-tab').addClass('tab-active');
-        $('.role-field').val("Usuário");
+        $('.role-field').val("user");
     });
 });

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,10 @@ use App\Http\Controllers\AuthController;
 |
 */
 Route::controller(AuthController::class)->group(function() {
-    Route::get('/admin/login', 'index')->name('admin.index');
-    Route::post('/admin/login', 'login')->name('admin.login');
+    Route::get('/admin/login', 'index')->name('admin.login');
+    Route::post('/admin', 'login')->name('admin');
+});
+
+Route::controller(AdminController::class)->group(function() {
+    Route::get('admin/home', 'index')->name('admin.home');
 });
